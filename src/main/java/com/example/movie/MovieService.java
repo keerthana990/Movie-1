@@ -47,7 +47,7 @@ public class MovieService implements MovieRepository {
        return movie;
     }
     @Override
-    public Movie updateMovie(int movieID,Movie movie){
+    public Movie updateMovie(int movieId,Movie movie){
         Movie existingMovie=movieList.get(movieId);
         if (existingMovie==null){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
@@ -64,14 +64,14 @@ public class MovieService implements MovieRepository {
         return existingMovie;
     }
     @Override
-    public void deleteMovie(int movieID){
-        Movie existingMovie=movieList.get(movieID);
+    public void deleteMovie(int movieId){
+        Movie existingMovie=movieList.get(movieId);
         if(existingMovie == null){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
 
         else{
-            movieList.remove(movieID);
+            movieList.remove(movieId);
             throw new ResponseStatusException(HttpStatus.NO_CONTENT);
         }
 
