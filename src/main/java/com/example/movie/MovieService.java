@@ -48,7 +48,7 @@ public class MovieService implements MovieRepository {
     }
     @Override
     public Movie updateMovie(int movieID,Movie movie){
-        Movie existingMovie=movieList.get(movieID);
+        Movie existingMovie=movieList.get(movieId);
         if (existingMovie==null){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
 
